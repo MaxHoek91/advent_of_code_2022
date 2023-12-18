@@ -19,3 +19,12 @@ fn test_day_2() {
     assert_eq!(total_score.0, 8933);
     assert_eq!(total_score.1, 11998);
 }
+
+#[test]
+fn test_day_3() {
+    let file = Path::new("./data/day_3_rucksack_reorganization.txt").to_str().unwrap();
+    let priorities = day_3_rucksack_reorganization::determine_sum_of_priorities(file);
+
+    assert_eq!(priorities.0, 8515);
+    assert_eq!(priorities.1, 2434);
+}

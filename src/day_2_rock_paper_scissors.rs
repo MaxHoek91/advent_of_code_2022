@@ -16,7 +16,7 @@ pub fn determine_total_score(file_path: &str) -> (u32, u32) {
     (total_score_part_one, total_score_part_two)
 }
 
-
+#[inline]
 fn rock_paper_scissors_score_part_one(line: &str) -> u32 {
     // A, X = Rock (1)
     // B, Y = Paper (2)
@@ -39,6 +39,7 @@ fn rock_paper_scissors_score_part_one(line: &str) -> u32 {
     }
 }
 
+#[inline]
 fn rock_paper_scissors_score_part_two(line: &str) -> u32 {
     // A = Rock (1)
     // B = Paper (2)

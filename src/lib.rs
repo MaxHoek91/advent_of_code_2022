@@ -3,12 +3,14 @@ use std::time::Instant;
 
 pub mod day_1_calorie_counting;
 pub mod day_2_rock_paper_scissors;
+pub mod day_3_rucksack_reorganization;
 
 pub fn solve_all() {
     println!("Advent of Code 2022\n");
 
     day_1();
     day_2();
+    day_3();
 }
 
 fn day_1() {
@@ -36,5 +38,19 @@ fn day_2() {
         Total Score 1: {}\n\
         Total Score 2: {}\n",
         timer.elapsed(), total_score.0, total_score.1
+    );
+}
+
+fn day_3() {
+    let file = Path::new("./data/day_3_rucksack_reorganization.txt").to_str().unwrap();
+    let timer = Instant::now();
+    let priorities = day_3_rucksack_reorganization::determine_sum_of_priorities(file);
+
+    println!(
+        "Day 3: Rucksack Reorganization\n\
+        Run Time: {:?}\n\
+        Sum of Priorities 1: {}\n\
+        Sum of Priorities 2: {}\n",
+        timer.elapsed(), priorities.0, priorities.1
     );
 }

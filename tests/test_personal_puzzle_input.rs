@@ -31,9 +31,18 @@ fn test_day_3() {
 
 #[test]
 fn test_day_4() {
-    let file = Path::new("./data/day_3_rucksack_reorganization.txt").to_str().unwrap();
+    let file = Path::new("./data/day_4_camp_cleanup.txt").to_str().unwrap();
     let (contained_pairs, overlap_count) = day_4_camp_cleanup::determine_assignment_pairs(file);
 
     assert_eq!(contained_pairs, 413);
     assert_eq!(overlap_count, 806);
+}
+
+#[test]
+fn test_day_5() {
+    let file = Path::new("./data/day_5_supply_stacks.txt").to_str().unwrap();
+    let crates_on_top = day_5_supply_stacks::determine_top_crates(file);
+
+    assert_eq!(crates_on_top.0, "FWNSHLDNZ");
+    assert_eq!(crates_on_top.1, "RNRGDNFQG");
 }

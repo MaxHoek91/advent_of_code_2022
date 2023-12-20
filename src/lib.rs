@@ -5,6 +5,8 @@ pub mod day_1_calorie_counting;
 pub mod day_2_rock_paper_scissors;
 pub mod day_3_rucksack_reorganization;
 pub mod day_4_camp_cleanup;
+pub mod day_5_supply_stacks;
+
 
 pub fn solve_all() {
     println!("Advent of Code 2022\n");
@@ -13,6 +15,7 @@ pub fn solve_all() {
     day_2();
     day_3();
     day_4();
+    day_5();
 }
 
 fn day_1() {
@@ -68,5 +71,19 @@ fn day_4() {
         Fully Contained Pairs: {}\n\
         Any Overlap Count: {}\n",
         timer.elapsed(), contained_pairs, overlap_count
+    );
+}
+
+fn day_5() {
+    let file = Path::new("./data/day_5_supply_stacks.txt").to_str().unwrap();
+    let timer = Instant::now();
+    let crates_on_top = day_5_supply_stacks::determine_top_crates(file);
+
+    println!(
+        "Day 5: Supply Stacks\n\
+        Run Time: {:?}\n\
+        Crate on top of each stack 1: {}\n\
+        Crate on top of each stack 2: {}\n",
+        timer.elapsed(), crates_on_top.0, crates_on_top.1
     );
 }

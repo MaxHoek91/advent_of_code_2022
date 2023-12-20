@@ -22,21 +22,22 @@ pub fn determine_assignment_pairs(file_path: &str) -> (u32, u32) {
     (contained_pairs, any_overlap_count)
 }
 
-
+#[inline]
 fn parse_pair(pair: &str) -> (u8, u8) {
     let (low, high) = pair.split_once('-').unwrap();
     (low.parse().unwrap(), high.parse().unwrap())
 }
 
+#[inline]
 fn is_fully_contained<T>(pair_one: (T, T), pair_two: (T, T)) -> bool where T: Ord {
     (pair_one.0 <= pair_two.0 && pair_one.1 >= pair_two.1)
     || (pair_one.0 >= pair_two.0 && pair_one.1 <= pair_two.1)
 }
 
+#[inline]
 fn any_overlap<T>(pair_one: (T, T), pair_two: (T, T)) -> bool where T: Ord {
     pair_one.0 <= pair_two.1  && pair_two.0 <= pair_one.1
 }
-
 
 
 #[cfg(test)]

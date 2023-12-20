@@ -28,3 +28,12 @@ fn test_day_3() {
     assert_eq!(priorities.0, 8515);
     assert_eq!(priorities.1, 2434);
 }
+
+#[test]
+fn test_day_4() {
+    let file = Path::new("./data/day_3_rucksack_reorganization.txt").to_str().unwrap();
+    let (contained_pairs, overlap_count) = day_4_camp_cleanup::determine_assignment_pairs(file);
+
+    assert_eq!(contained_pairs, 413);
+    assert_eq!(overlap_count, 806);
+}
